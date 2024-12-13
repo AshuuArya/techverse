@@ -1,0 +1,466 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  background: #2a2a2a;
+  color: #ff0000;
+}
+
+.header {
+  padding: 19px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.11);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.5s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0 auto;
+  width: 100%;
+  height: 20px;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.header h1 {
+  font-size: 30px;
+  margin: 0px;
+  color: #000000;
+  text-shadow: 0px 0px 10px rgb(255, 255, 255);
+  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.header.scrolled h1 {
+  color: #ffffff;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+}
+
+.topnav {
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  display: flex;
+  border-radius: 10px;
+  transition: background-color 0.5s ease-in-out;
+  padding: 10px;
+}
+
+.topnav a {
+  display: block;
+  color: #ffffffd6;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 20px;
+  transition: background-color 0.8s, transform 0.5s ease-in-out;
+  letter-spacing: 2px;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.746);
+}
+
+.topnav.scrolled {
+  backdrop-filter: blur(15px);
+}
+
+.topnav a:hover {
+  background-color: #11111144;
+  color: #00c3ff;
+  transform-origin: center;
+  animation: rotateHover 0.4s ease-in-out 1s alternate-reverse;
+}
+
+.topnav a:nth-child(1):hover {
+  transform: scale(1.1) rotate(var(--random-rotation-1));
+  transition-duration: 0.2s;
+}
+
+.topnav a:nth-child(2):hover {
+  transform: scale(1.1) rotate(var(--random-rotation-2));
+  transition-duration: 0.2s;
+}
+
+.topnav a:nth-child(3):hover {
+  transform: scale(1.1) rotate(var(--random-rotation-3));
+  transition-duration: 0.2s;
+}
+
+.topnav a:nth-child(4):hover {
+  transform: scale(1.1) rotate(var(--random-rotation-4));
+  transition-duration: 0.2s;
+}
+
+@keyframes rotateHover {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.float-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.float-in.float-in-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float-in-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float-in-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.row {
+  flex-wrap: wrap;
+  max-width: 100%;
+ background-color: white;
+ border-radius: 20px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 100px #000000;
+}
+
+.row h2 {
+  color: #000; /* Darker black color for headings */
+}
+
+.row p {
+  color: #555; /* Lighter color for content */
+}
+
+.leftcolumn {
+  flex: 90%;
+  padding: 10px 5px;
+}
+
+.text-content p {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.2em;
+  color: #3f3f3f;
+  line-height: 1.6;
+  text-align: justify;
+}
+.about-text p {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.2em;
+  color: #f0f0f0d6;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #696969;
+  font-weight: bold;
+}
+
+.image-text-wrapper {
+  overflow: hidden;
+}
+
+.fakeimg img {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  
+}
+
+.card {
+  background-color: #fffffff6;
+  border-radius: 10px;
+  padding: 50px;
+
+  margin-top: 40px;
+  flex: 80%;
+  box-shadow: 0px 0px 100px 850px rgba(255, 255, 255, 0.131);
+}
+.card * {
+  font-size: 1.1em;
+  color: #181717; /* Adjust the font size as needed */
+}
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+  font-size: 1.5em; /* Adjust the font size as needed */
+}
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(10px);
+  margin-top: 20px;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.footer.visible {
+  opacity: 1;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+/* styles.css */
+
+.newsletter-form {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.53);
+  text-align: center;
+}
+
+.newsletter-title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#newsletter-email {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #005aa7;
+  color: white;
+}
+
+.social-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-links li:last-child {
+  margin-right: 0;
+}
+
+.social-links a img {
+  width: 30px;
+  height: auto;
+  border-radius: 0%;
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.social-links a:hover img {
+  transform: scale(1.1); /* Scale up by 1.1 on hover */
+}
+
+/* Animation for footer */
+.footer-container {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.footer-container.fade-in {
+  opacity: 1;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+/* Footer animation when fully scrolled */
+.footer-container.visible .footer {
+  animation: fadeInAnimation 1s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .topnav a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+#googlePayButton {
+  background-color: #34A853;
+  color: #FFFFFF;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#googlePayButton:hover {
+  background-color: #2f804d;
+}
+
+.tips {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none; /* Remove underline */
+  color: rgba(255, 255, 255, 0.759); /* Initial color */
+  transition: color 0.9s ease, font-size 0.5s ease; /* Transition for color and font size */
+  text-align: center; /* Center-align the text */
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.179); /* Add shadow to the text */
+}
+
+.tips::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 100%; /* Position at the right edge */
+  width: 0;
+  height: 1px;
+  background-color: rgb(255, 0, 0); /* Match the color of the text */
+  transition: width 0.7s ease, right 0.7s ease; /* Transition for underline width and position */
+}
+
+.tips:hover {
+  color: rgb(255, 0, 0); /* Change color on hover */
+  font-size: 1.0em; /* Increase font size on hover */
+  text-decoration: none; /* Remove underline on hover */
+  transition: color 0.5s ease, font-size 0.3s ease; /* Transition on hover */
+}
+
+.tips:hover::after {
+  width: 100%; /* Expand underline width on hover */
+  right: 0; /* Move underline to the left edge on hover */
+  transition: width 0.5s ease, right 0.5s ease; /* Transition for underline width and position on hover */
+}
+.tab {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /* Hide the list items initially */
+}
+
+.tab li {
+  display: flex;
+  margin-right: 10px;
+  animation: fadeInLeft 0.7s ease forwards; /* Apply animation to each list item */
+  opacity: 0; /* Set initial opacity to 0 */
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px); /* Start from left side */
+  }
+  to {
+    opacity: 1  ;
+    transform: translateX(0px); /* Move to original position */
+  }
+}
+
+.tab li a {
+  text-decoration: none;
+  color: #7300ff;
+  
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.tab li a:hover {
+  color: #ff0000bf;
+  background-color: #00000004;
+  box-shadow: 5px 5px 10px rgba(19, 19, 19, 0.692);
+  transform: translateY(-2px);
+}
+
+.tab li a::after {
+  content: '';
+  display: flex;
+  width: 100%;
+  height: 2px;
+  background-color: #0000ff79;
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.tab li a:hover::after {
+  transform: scaleX(1.0);
+}
